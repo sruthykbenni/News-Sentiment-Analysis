@@ -18,7 +18,7 @@ API_KEY = "0a6071bad4307a102cecbdf2e40ecd07"
 last_updated = datetime.now().strftime("%A, %d %B %Y | %I:%M %p")
 
 # ✅ Title and last updated time
-st.markdown("<h1 style='text-align: center; color: #336699;'>🗞️ Live News Sentiment Analyzer</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: #336699;'>📰 Live News Sentiment Analyzer</h1>", unsafe_allow_html=True)
 st.markdown(f"<p style='text-align: center;'>📅 <strong>Last Updated:</strong> <code>{last_updated}</code></p>", unsafe_allow_html=True)
 st.markdown("---")
 
@@ -49,7 +49,7 @@ df = pd.DataFrame([{
 df[["sentiment_score", "sentiment_label"]] = df["content"].apply(lambda x: pd.Series(analyze_sentiment(x)))
 
 # ✅ Build display
-st.markdown("<h3 style='color: red;'>📰 Latest Indian Headlines with Sentiment</h3>", unsafe_allow_html=True)
+st.markdown("<h3 style='color: red;'>🚨 Latest Indian Headlines with Sentiment</h3>", unsafe_allow_html=True)
 
 new_urls = []
 
