@@ -49,7 +49,7 @@ df = pd.DataFrame([{
 df[["sentiment_score", "sentiment_label"]] = df["content"].apply(lambda x: pd.Series(analyze_sentiment(x)))
 
 # ✅ Build display
-st.markdown("<h3 style='color: red;'>🚨 Latest Indian Headlines with Sentiment</h3>", unsafe_allow_html=True)
+st.markdown("<h2 style='color: #ff6666;'>🚨 Latest Indian Headlines with Sentiment</h2>", unsafe_allow_html=True)
 
 new_urls = []
 
