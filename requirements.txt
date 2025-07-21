@@ -1,5 +1,8 @@
 streamlit
 requests
 pyspark
-textblob
+transformers
+torch
 matplotlib
+pandas
+
