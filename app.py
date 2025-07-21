@@ -18,7 +18,7 @@ API_KEY = "0a6071bad4307a102cecbdf2e40ecd07"
 last_updated = datetime.now().strftime("%A, %d %B %Y | %I:%M %p")
 
 # ✅ Title and last updated time
-st.markdown("<h1 style='text-align: center; color: #336699;'>📰 Live News Sentiment Analyzer</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: #336699;'>🗞️ Live News Sentiment Analyzer</h1>", unsafe_allow_html=True)
 st.markdown(f"<p style='text-align: center;'>📅 <strong>Last Updated:</strong> <code>{last_updated}</code></p>", unsafe_allow_html=True)
 st.markdown("---")
 
@@ -49,7 +49,7 @@ df = pd.DataFrame([{
 df[["sentiment_score", "sentiment_label"]] = df["content"].apply(lambda x: pd.Series(analyze_sentiment(x)))
 
 # ✅ Build display
-st.subheader("📰 Latest Indian Headlines with Sentiment")
+st.markdown("<h3 style='color: red;'>📰 Latest Indian Headlines with Sentiment</h3>", unsafe_allow_html=True)
 
 new_urls = []
 
@@ -57,8 +57,8 @@ for idx, row in df.iterrows():
     is_new = row["url"] not in seen_urls
     sentiment_icon = "✅" if row['sentiment_label'] == "Positive" else "❌" if row['sentiment_label'] == "Negative" else "➖"
 
-    # Headline with optional 🆕 tag
-    st.markdown(f"### {'🆕 ' if is_new else ''}{row['title']}")
+    # Headline with optional 🔥 tag
+    st.markdown(f"### {'🔥 ' if is_new else ''}{row['title']}")
     st.write(f"{sentiment_icon} Sentiment: **{row['sentiment_label']}** ({row['sentiment_score']})")
     st.write(f"📰 Source: {row['source']} | 📅 Published: {row['published']}")
 
