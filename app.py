@@ -9,7 +9,7 @@ from utils import fetch_news, analyze_sentiment
 API_KEY = "0a6071bad4307a102cecbdf2e40ecd07"
 
 st.set_page_config(page_title="Indian News Sentiment", layout="wide")
-st.title("📰 Indian News Sentiment Analyzer")
+st.title("📰 Live News Sentiment Analyzer")
 
 # Fetch News from API
 articles = fetch_news(API_KEY)
