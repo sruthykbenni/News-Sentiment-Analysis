@@ -87,22 +87,6 @@ A real-time, interactive web application that fetches the latest Indian news usi
 
 ---
 
-## 🧪 Folder Structure
-
-```
-news-sentiment-analyzer/
-│
-├── app.py                   # Main Streamlit app
-├── utils.py                 # News fetch + sentiment functions
-├── seen_news.json           # Stores previously seen URLs
-├── requirements.txt         # Dependencies
-├── README.md                # This file
-└── .streamlit/
-    └── secrets.toml         # API Key for GNews
-```
-
----
-
 ## 📊 Sample Output
 
 | Title                            | Source    | Sentiment | Score |
