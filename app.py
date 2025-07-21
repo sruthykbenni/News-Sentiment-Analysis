@@ -12,7 +12,11 @@ API_KEY = "0a6071bad4307a102cecbdf2e40ecd07"
 st.set_page_config(page_title="Live News Sentiment", layout="wide")
 st.title("📰 Live News Sentiment Analyzer")
 
-st.markdown(f"📅 **Last Updated:** `{last_updated}`", unsafe_allow_html=True)
+last_updated = datetime.now().strftime("%A, %d %B %Y | %I:%M %p")
+
+st.markdown("<h1 style='text-align: center; color: #336699;'>📰 Indian News Sentiment Analyzer</h1>", unsafe_allow_html=True)
+st.markdown(f"<p style='text-align: center;'>📅 <strong>Last Updated:</strong> <code>{last_updated}</code></p>", unsafe_allow_html=True)
+st.markdown("---")
 
 # Fetch News from API
 articles = fetch_news(API_KEY)
