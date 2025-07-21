@@ -4,18 +4,24 @@ from pyspark.sql import SparkSession
 import pandas as pd
 import matplotlib.pyplot as plt
 from utils import fetch_news, analyze_sentiment
+from datetime import datetime
 
 # SET YOUR GNEWS API KEY HERE
 API_KEY = "0a6071bad4307a102cecbdf2e40ecd07"
 
-st.set_page_config(page_title="Indian News Sentiment", layout="wide")
+st.set_page_config(page_title="Live News Sentiment", layout="wide")
 st.title("📰 Live News Sentiment Analyzer")
+
+st.markdown(f"📅 **Last Updated:** `{last_updated}`", unsafe_allow_html=True)
 
 # Fetch News from API
 articles = fetch_news(API_KEY)
 if not articles:
     st.warning("Failed to fetch news. Please check your API key or limit.")
     st.stop()
+
+# Get current time
+last_updated = datetime.now().strftime("%A, %d %B %Y | %I:%M %p")
 
 # Process into DataFrame
 df = pd.DataFrame([{
