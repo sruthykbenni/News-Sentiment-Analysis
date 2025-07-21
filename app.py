@@ -23,7 +23,7 @@ st.markdown(f"<p style='text-align: center;'>📅 <strong>Last Updated:</strong>
 st.markdown("---")
 
 # ✅ Fetch News
-articles = fetch_news(API_KEY)
+articles = fetch_news(API_KEY, max_articles=15)
 if not articles:
     st.warning("Failed to fetch news. Please check your API key or limit.")
     st.stop()
